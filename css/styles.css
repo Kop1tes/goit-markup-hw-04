@@ -141,6 +141,7 @@ img {
 }
 
 .header-contact-link {
+  color: var(--second-light-theme);
 }
 
 .header-contact-link:hover,
@@ -453,6 +454,7 @@ img {
 
 .footer-list {
   display: flex;
+  align-items: baseline;
   gap: 70px;
 }
 
