@@ -13,6 +13,8 @@
   /* others */
   --items: 3;
   --indent: 30px;
+  /* animations */
+  --anim-slow: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 body {
@@ -45,8 +47,6 @@ img {
   padding-right: 15px;
   margin-right: auto;
   margin-left: auto;
-
-  outline: 1px solid red;
 }
 
 .section {
@@ -114,18 +114,33 @@ img {
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--main-light-theme);
+
+  transition: color var(--anim-slow);
+}
+
+.current-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: var(--accent-txt-cl);
+}
+
+.current-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  display: inline-block;
+  margin-right: 10px;
+  color: var(--accent-txt-cl);
+  background-color: var(--accent-txt-cl);
+  border-radius: 2px;
 }
 
 .header-link:hover,
 .header-link:focus {
-  color: var(--accent-txt-cl);
-}
-
-.current {
-  color: var(--accent-txt-cl);
-}
-
-.header-link:current {
   color: var(--accent-txt-cl);
 }
 
@@ -142,6 +157,8 @@ img {
 
 .header-contact-link {
   color: var(--second-light-theme);
+
+  transition: color var(--anim-slow);
 }
 
 .header-contact-link:hover,
@@ -200,6 +217,8 @@ img {
   border-radius: 4px;
   cursor: pointer;
   border: none;
+
+  transition: background-color var(--anim-slow);
 }
 
 .title-btn:hover,
@@ -326,6 +345,8 @@ img {
   background-color: var(--main-dark-theme);
   border-radius: 50%;
   color: var(--bg-buttons);
+
+  transition: color var(--anim-slow), background-color var(--anim-slow);
 }
 
 .team-social-link:hover,
@@ -370,6 +391,8 @@ img {
   border: 1px solid var(--bg-buttons);
   border-radius: 4px;
   color: var(--bg-buttons);
+
+  transition: color var(--anim-slow), border var(--anim-slow);
 }
 
 .clients-list-link:hover,
@@ -411,6 +434,8 @@ img {
   font-size: 14px;
   line-height: 1.71;
   color: rgba(255, 255, 255, 0.6);
+
+  transition: color var(--anim-slow);
 }
 
 .footer-link:hover,
@@ -437,6 +462,8 @@ img {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
   color: var(--main-dark-theme);
+
+  transition: color var(--anim-slow), background-color var(--anim-slow);
 }
 
 .footer-social-link:hover,
@@ -486,6 +513,8 @@ img {
   border: none;
   cursor: pointer;
   padding: 6px 22px;
+  transition: color var(--anim-slow), background-color var(--anim-slow),
+    filter var(--anim-slow);
 }
 
 .filters-btn:active {
@@ -523,6 +552,8 @@ img {
   width: calc((100% - 90px) / 3);
   box-sizing: border-box;
   border: 1px solid #eeeeee;
+
+  transition: border var(--anim-slow), box-shadow var(--anim-slow);
 }
 
 .projects-list-item:hover,
